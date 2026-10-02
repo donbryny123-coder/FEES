@@ -1,0 +1,9 @@
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<meta name="theme-color" content="#173b35">
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("{{ url_for('service_worker') }}").catch(() => { });
+        });
+    }
+</script>
